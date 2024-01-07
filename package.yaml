@@ -1,0 +1,37 @@
+name:                telegram-bot
+version:             0.1.0.0
+github:              "AllerleiMal/OhceHaskellBot"
+license:             BSD3
+author:              "AllerleiMal"
+copyright:           "2024 AllerleiMal"
+
+extra-source-files:
+- README.md
+
+description:         Please see the README on Github at <https://github.com/AllerleiMal/OhceHaskellBot/blob/master/README.md>
+
+dependencies:
+- base >= 4.7 && < 5
+- req
+- bytestring
+- text
+- aeson
+- either
+- transformers
+- scientific
+- bytestring
+
+
+library:
+  source-dirs: src
+
+executables:
+  telegram-bot-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - telegram-bot
